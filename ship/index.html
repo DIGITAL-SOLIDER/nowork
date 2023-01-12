@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+
+    <script src="./or.js"></script>
+
+  </head>
+
+  <body>
+    <a-scene background="black">
+
+      <a-entity id="cameeeeeer" camera position="10 -1 -150"></a-entity>
+
+      <a-entity light="type:ambient;color:white;intensity:1.5"></a-entity>
+
+      <a-assets>        
+        <a-asset-item
+          id="ocean"
+          src="./assets/gltf/scene.gltf"
+        ></a-asset-item>
+
+        <a-asset-item
+          id="ownship"
+          src="./assets/sub/scene.gltf"
+        ></a-asset-item>
+        
+      </a-assets>
+
+      <a-entity
+        id="o"
+        gltf-model="#ocean"
+        position="10 -2 -150"
+        scale="1 1 1"
+        animation="property: position; to: 0 0 1000;easing:linear; loop: true; dur: 150000"
+        ocean-rotation-reader
+      >
+      </a-entity>
+
+      <a-entity
+        id="s"
+        gltf-model="#ownship"
+        position="10 -2 -150"
+        scale="0.001 0.005 0.006"
+        animation="property: position; to: 0 0 1000;easing:linear; loop: true; dur: 150000"
+        ship-rotation-reader
+      >
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
